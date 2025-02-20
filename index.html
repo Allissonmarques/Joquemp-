@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Joquempô</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>JOQUEMPÔ</h1>
+        </header>
+
+        <main>
+
+            <button id="stone" onclick="playerClickedTheButton('stone')">&#x270A;</button>
+            <button id="paper" onclick="playerClickedTheButton('paper')">&#x1F590;</button>
+            <button id="scissors" onclick="playerClickedTheButton('scissors')">&#x270C;</button>
+
+            <p class="result"></p>
+        
+            <p>Sua pontuação: <span id="player">0</span></p>
+            <p>Pontuação da máquina: <span id="machine">0</span></p>
+        
+        </main>
+
+    </div>
+</body>
+
+<script src="./scripts.js"></script>
+
+</html>
