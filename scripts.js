@@ -1,4 +1,10 @@
 const result = document.querySelector(".result")
+const onscreenChoices = document.querySelector(".humanXmachine")
+const yourScore = document.querySelector("#player")
+const machineScore = document.querySelector("#machine")
+
+let humanPlayerScore = 0
+let scoringMachinePlayer = 0
 
 const playerClickedTheButton = (humanChoice) => {
     playTheGame(humanChoice, playMachine())
@@ -7,13 +13,12 @@ const playerClickedTheButton = (humanChoice) => {
 const playMachine = () => {
     const choices = ['stone', 'paper', 'scissors']
     const randomNumber = Math.floor(Math.random() * 3)
-
-
+    
     return choices[randomNumber]
 }
 
 const playTheGame = (human, machine) => {
-    console.log("Humano: " + human + "Máquina: " + machine)
+    onscreenChoices.innerHTML = ("Humano:" + human + " Vs " + "Máquina:" + machine)
 
     if (human === machine) {
         result.innerHTML = "Empatou!"
@@ -25,8 +30,14 @@ const playTheGame = (human, machine) => {
         (human === 'stone' && machine === 'scissors')
     )
     {
+        humanPlayerScore++
+        yourScore.innerHTML = humanPlayerScore
         result.innerHTML = "Você ganhou!"
-    } else {
+    }
+    
+    else {
+        scoringMachinePlayer++
+        machineScore.innerHTML = scoringMachinePlayer
         result.innerHTML = "Você perdeu!"
     }
 
